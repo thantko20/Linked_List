@@ -48,4 +48,8 @@ class LinkedList
       tmp = tmp.next_node
     end
   end
+
+  def pop
+    at(self.size-2).next_node = nil
+  end
 end
