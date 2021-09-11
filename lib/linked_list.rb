@@ -2,8 +2,8 @@ require_relative 'node'
 
 class LinkedList
   attr_accessor :head
-  def initialize(head=Node.new)
-    @head = head
+  def initialize(value=nil)
+    @head = Node.new(value)
   end
   
   # Implement #append(value) which adds a new node with value
@@ -19,4 +19,7 @@ class LinkedList
     tmp = tmp.next_node while !tmp.next_node.nil?
     tmp.next_node = Node.new(value)
   end
+
+  # Implement #prepend(value) that'll add a new node
+  # at the start of the list
 end
