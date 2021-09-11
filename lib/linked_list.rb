@@ -52,4 +52,16 @@ class LinkedList
   def pop
     at(self.size-2).next_node = nil
   end
+
+  def find(value)
+    tmp = @head
+    loop do
+      return true if tmp.value == value
+
+      tmp = tmp.next_node
+      break if tmp.nil?
+    end
+    
+    false
+  end
 end
