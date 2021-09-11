@@ -6,7 +6,7 @@ class LinkedList
   def initialize(value=nil)
     @head = Node.new(value)
   end
-  
+ 
   def append(value)
     tmp = @head
     tmp = tmp.next_node while !tmp.next_node.nil?
@@ -17,5 +17,16 @@ class LinkedList
     tmp = @head
     @head = Node.new(value)
     @head.next_node = tmp
+  end
+
+  def size
+    count = 0
+    tmp = @head
+    loop do
+      count += 1
+      break if tmp.next_node.nil?
+      tmp = tmp.next_node
+    end
+    count
   end
 end
