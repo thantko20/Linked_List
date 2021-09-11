@@ -29,4 +29,12 @@ class LinkedList
     end
     count
   end
+
+  def tail
+    tmp = @head
+    loop do
+      return tmp if tmp.next_node.nil?
+      tmp = tmp.next_node
+    end
+  end
 end
