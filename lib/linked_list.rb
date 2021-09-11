@@ -38,4 +38,14 @@ class LinkedList
       tmp = tmp.next_node
     end
   end
+
+  def at(index)
+    count = 0
+    tmp = @head
+    loop do
+      return tmp if count == index
+      count += 1
+      tmp = tmp.next_node
+    end
+  end
 end
