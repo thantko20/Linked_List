@@ -53,7 +53,7 @@ class LinkedList
     at(self.size-2).next_node = nil
   end
 
-  def find(value)
+  def contains?(value)
     tmp = @head
     loop do
       return true if tmp.value == value
