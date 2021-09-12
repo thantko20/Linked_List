@@ -7,7 +7,7 @@ list.append('Susan')
 list.prepend("Amy")
 list.prepend("Josh")
 
-p list.sizem # => 5
+p list.size # => 5
 p list.tail.value # => "Susan"
 p list.at(2).value # => "Marco"
 
