@@ -84,12 +84,10 @@ class LinkedList
       string.concat("( #{tmp.value} ) -> ")
       if tmp.next_node.nil?
         string.concat(" nil")
-        break
-      end
-      
+        return string
+      end     
       tmp = tmp.next_node
     end
-    string
   end
 
   def insert_at(value, index)
