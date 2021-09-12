@@ -58,10 +58,8 @@ class LinkedList
       return true if tmp.value == value
 
       tmp = tmp.next_node
-      break if tmp.nil?
+      return false if tmp.nil?
     end
-    
-    false
   end
 
   def find(value)
