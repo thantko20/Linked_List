@@ -65,6 +65,17 @@ class LinkedList
     false
   end
 
+  def find(value)
+    tmp = @head
+    index = 0
+    loop do
+      return index if tmp.value == value
+      index += 1
+      tmp = tmp.next_node
+      raise "Node with such value doesn't exist." if tmp.nil?
+    end
+  end
+
   # format:
   # ( value ) -> ( value ) -> ( value ) -> nil
   def to_s
