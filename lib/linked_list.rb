@@ -2,10 +2,11 @@ require_relative 'node'
 
 class LinkedList
   attr_accessor :head
-  def initialize(value=nil)
+
+  def initialize(value = nil)
     @head = Node.new(value)
   end
- 
+
   def append(value)
     tail.next_node = Node.new(value)
   end
@@ -22,6 +23,7 @@ class LinkedList
     loop do
       count += 1
       return count if tmp.next_node.nil?
+
       tmp = tmp.next_node
     end
   end
@@ -30,6 +32,7 @@ class LinkedList
     tmp = @head
     loop do
       return tmp if tmp.next_node.nil?
+
       tmp = tmp.next_node
     end
   end
@@ -39,13 +42,14 @@ class LinkedList
     tmp = @head
     loop do
       return tmp if count == index
+
       count += 1
       tmp = tmp.next_node
     end
   end
 
   def pop
-    at(self.size-2).next_node = nil
+    at(size - 2).next_node = nil
   end
 
   def contains?(value)
@@ -63,6 +67,7 @@ class LinkedList
     index = 0
     loop do
       return index if tmp.value == value
+
       index += 1
       tmp = tmp.next_node
       raise "Node with such value doesn't exist." if tmp.nil?
@@ -74,12 +79,12 @@ class LinkedList
   def to_s
     string = ''
     tmp = @head
-    loop do      
+    loop do
       string.concat("( #{tmp.value} ) -> ")
       if tmp.next_node.nil?
-        string.concat(" nil")
+        string.concat(' nil')
         return string
-      end     
+      end
       tmp = tmp.next_node
     end
   end
