@@ -67,19 +67,17 @@ class LinkedList
 
   # format:
   # ( value ) -> ( value ) -> ( value ) -> nil
-  # Using recursion would be good
-  # let's see loops can do the same
   def to_s
     string = ''
     tmp = @head
-    loop do
+    loop do      
       string.concat("( #{tmp.value} ) -> ")
-      if tmp == tail
-        string.concat("nil")
+      if tmp.next_node.nil?
+        string.concat(" nil")
         break
       end
-      string.concat("( #{tmp.next_node.value} ) -> ")
-      tmp = tmp.next_node.next_node
+      
+      tmp = tmp.next_node
     end
     string
   end
