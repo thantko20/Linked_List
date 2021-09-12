@@ -25,10 +25,9 @@ class LinkedList
     tmp = @head
     loop do
       count += 1
-      break if tmp.next_node.nil?
+      return count if tmp.next_node.nil?
       tmp = tmp.next_node
     end
-    count
   end
 
   def tail
